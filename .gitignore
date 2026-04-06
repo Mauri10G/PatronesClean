@@ -1,6 +1,7 @@
 
 mongo/
 .env
+.env.template
 
 node_modules/
 dist/

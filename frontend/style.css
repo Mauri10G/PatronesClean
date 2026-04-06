@@ -1,0 +1,150 @@
+:root {
+    --bg-color: #323437;
+    --main-color: #e2b714;
+    --caret-color: #e2b714;
+    --sub-color: #646669;
+    --text-color: #d1d0c5;
+    --error-color: #ca4754;
+    --correct-color: #d1d0c5;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Menlo, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 32px;
+}
+
+/* Auth Styles */
+.auth-container {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+input {
+    background: transparent;
+    border: 1px solid var(--sub-color);
+    color: var(--text-color);
+    padding: 10px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+button {
+    background: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+header button {
+    background: var(--sub-color);
+    color: var(--text-color);
+}
+
+/* Game Styles */
+time {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+#paragraph {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+word {
+    display: flex;
+    border-bottom: 2px solid transparent;
+}
+
+word.marked {
+    border-color: var(--error-color);
+}
+
+letter {
+    color: var(--sub-color);
+    position: relative;
+}
+
+letter.active::before {
+    content: '|';
+    color: var(--caret-color);
+    position: absolute;
+    left: -35%;
+    animation: blink 1s infinite ease-in-out;
+}
+
+letter.active.is-last::before {
+    left: 65%;
+}
+
+letter.correct {
+    color: var(--correct-color);
+}
+
+letter.incorrect {
+    color: var(--error-color);
+}
+
+#input-text {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+
+#game-results {
+    text-align: center;
+    margin-top: 32px;
+}
+
+#reload-btn {
+    background: transparent;
+    color: var(--sub-color);
+    margin-top: 16px;
+    border-radius: 50%;
+    padding: 8px;
+    transition: all 0.3s;
+}
+
+#reload-btn:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

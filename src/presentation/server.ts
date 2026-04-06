@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+import cors from 'cors';
 
 
 interface Options {
@@ -22,6 +23,7 @@ export class Server {
     async start() {
 
         //Middleware para parsear el body de las peticiones
+        this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true })); // x-www-form-urlencoded
 

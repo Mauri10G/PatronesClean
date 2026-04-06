@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeyType Clone + Clean Auth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section id="auth-section">
+            <h1>Typing Game Login</h1>
+            
+            <div class="auth-container">
+                <form id="login-form">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="email" id="login-email" placeholder="Correo" required>
+                    <input type="password" id="login-password" placeholder="Contraseña" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+
+                <form id="register-form">
+                    <h2>Registrarse</h2>
+                    <input type="text" id="register-name" placeholder="Nombre" required>
+                    <input type="email" id="register-email" placeholder="Correo" required>
+                    <input type="password" id="register-password" placeholder="Contraseña" required>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+            <p id="auth-message" style="color: red; text-align: center;"></p>
+        </section>
+
+        <section id="game-section" style="display: none;">
+            <header>
+                <h2>Hola, <span id="user-display-name">Usuario</span></h2>
+                <button id="logout-btn">Cerrar Sesión</button>
+            </header>
+            
+            <time id="time">30</time>
+            <p id="paragraph"></p>
+            <input type="text" id="input-text" autofocus>
+            
+            <section id="game-results" style="display: none;">
+                <h2>Resultados</h2>
+                <h3 id="wpm">0 WPM</h3>
+                <h3 id="accuracy">0% Exactitud</h3>
+                <button id="reload-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1.002 7.935 1.007 9.425 4.747"></path>
+                        <path d="M20 4v5h-5"></path>
+                    </svg>
+                </button>
+            </section>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
