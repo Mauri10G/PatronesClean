@@ -27,6 +27,7 @@ export class AuthMiddleware {
 
 
 
+            // Attach user to request object
 
             req.body = { ...req.body, user };
             next();
